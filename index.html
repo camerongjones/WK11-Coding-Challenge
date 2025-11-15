@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Slideshow</title>
+	<link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+	<h1>Slide Show</h1>
+	<div class="slideshow-container">
+		<div class="slide fade">
+			<img src="bowl1.jpg" alt="Slide 1">
+		</div>
+		<div class="slide fade">
+			<img src="bowl2.jpg" alt="Slide 2">
+        </div>
+		<div class="slide fade">
+			<img src="bowl3.jpg" alt="Slide 3">
+		</div>
+		<div class="slide fade">
+			<img src="bowl4.jpg" alt="Slide 4">
+		</div>
+		<div class="slide fade">
+			<img src="bowl5.jpg" alt="Slide 5">
+		</div>
+		<div class="slide fade">
+			<img src="bowl6.jpg" alt="Slide 6">
+		</div>
+	</div>
+	<script>
+        let currentSlide = 0;
+
+        function showSlide(index) {
+	        const slides = document.querySelectorAll('.slide');
+
+	        slides.forEach((slide, i) => {
+		        slide.style.display = i === index ? 'flex' : 'none';
+	        });
+        }
+
+        function nextSlide() {
+	        currentSlide = (currentSlide + 1) % 6;
+	        showSlide(currentSlide);
+        }
+
+        setInterval(nextSlide, 2000);
+    </script>
+</body>
+
+</html>
